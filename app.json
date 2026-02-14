@@ -43,6 +43,19 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/23137e7a-4e04-4025-ba12-dbd7684256ea"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "23137e7a-4e04-4025-ba12-dbd7684256ea"
+      }
+    },
+    "owner": "edgarrooca"
   }
 }
