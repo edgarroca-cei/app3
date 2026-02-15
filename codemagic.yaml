@@ -12,6 +12,16 @@ workflows:
         script: npm install
       - name: Prebuild Expo App
         script: npx expo prebuild -p ios
+      - name: Debug Expo.plist
+        script: |
+          PLIST_PATH=$(find ios -name Expo.plist | head -n 1)
+          if [ -f "$PLIST_PATH" ]; then
+            echo "--- Content of $PLIST_PATH ---"
+            cat "$PLIST_PATH"
+            echo "------------------------------"
+          else
+            echo "ERROR: Expo.plist not found!"
+          fi
       - name: Install CocoaPods
         script: |
           cd ios

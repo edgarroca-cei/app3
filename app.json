@@ -55,9 +55,7 @@
       "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 30000
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "extra": {
       "router": {},
       "eas": {
