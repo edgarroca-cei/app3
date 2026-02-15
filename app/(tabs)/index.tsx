@@ -1,6 +1,4 @@
-import { Image } from 'expo-image';
-import * as Updates from 'expo-updates';
-import { Button, StyleSheet, Text } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -8,21 +6,6 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 
 export default function HomeScreen() {
-  async function onFetchUpdateAsync() {
-    try {
-      const update = await Updates.checkForUpdateAsync();
-      if (update.isAvailable) {
-        await Updates.fetchUpdateAsync();
-        await Updates.reloadAsync();
-      } else {
-        alert('No new update available');
-      }
-    } catch (error) {
-      alert(`Error fetching update: ${error}`);
-      console.error(error);
-    }
-  }
-
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -33,17 +16,14 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Debug OTA</ThemedText>
+        <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Current Configuration:</ThemedText>
-        <Text style={{ color: 'white' }}>Channel: {Updates.channel || 'default'}</Text>
-        <Text style={{ color: 'white' }}>Runtime: {Updates.runtimeVersion}</Text>
-        <Text style={{ color: 'white' }}>UpdateId: {Updates.updateId}</Text>
-        <Text style={{ color: 'white' }}>Is Embedded: {Updates.isEmbeddedLaunch ? 'Yes' : 'No'}</Text>
-
-        <Button title="Check & Download Update" onPress={onFetchUpdateAsync} />
+        <ThemedText type="subtitle">Start building your app</ThemedText>
+        <ThemedText>
+          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+        </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
