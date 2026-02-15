@@ -55,7 +55,10 @@ export default {
         updates: {
             url: "https://u.expo.dev/23137e7a-4e04-4025-ba12-dbd7684256ea",
             checkAutomatically: "ON_LOAD",
-            fallbackToCacheTimeout: 30000
+            fallbackToCacheTimeout: 30000,
+            requestHeaders: {
+                "expo-channel-name": process.env.EAS_CHANNEL || "production"
+            }
         },
         runtimeVersion: "1.0.0",
         extra: {
