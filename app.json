@@ -38,6 +38,12 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "./plugins/withUpdateChannel",
+        {
+          "channel": "production"
+        }
       ]
     ],
     "experiments": {
@@ -45,7 +51,9 @@
       "reactCompiler": true
     },
     "updates": {
-      "url": "https://u.expo.dev/23137e7a-4e04-4025-ba12-dbd7684256ea"
+      "url": "https://u.expo.dev/23137e7a-4e04-4025-ba12-dbd7684256ea",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 30000
     },
     "runtimeVersion": {
       "policy": "appVersion"

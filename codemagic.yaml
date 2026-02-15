@@ -12,12 +12,6 @@ workflows:
         script: npm install
       - name: Prebuild Expo App
         script: npx expo prebuild -p ios
-      - name: Set Update Channel
-        script: |
-          PLIST_PATH=$(find ios -name Expo.plist | head -n 1)
-          echo "Found Expo.plist at: $PLIST_PATH"
-          /usr/libexec/PlistBuddy -c "Add :EXPO_UPDATES_CHANNEL_NAME string production" "$PLIST_PATH" || /usr/libexec/PlistBuddy -c "Set :EXPO_UPDATES_CHANNEL_NAME production" "$PLIST_PATH"
-          cat "$PLIST_PATH"
       - name: Install CocoaPods
         script: |
           cd ios
