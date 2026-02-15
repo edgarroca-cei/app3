@@ -9,7 +9,8 @@ export default {
         userInterfaceStyle: "automatic",
         newArchEnabled: true,
         ios: {
-            supportsTablet: true
+            supportsTablet: true,
+            bundleIdentifier: "com.edgarrooca.app3"
         },
         android: {
             adaptiveIcon: {
@@ -19,7 +20,8 @@ export default {
                 monochromeImage: "./assets/images/android-icon-monochrome.png"
             },
             edgeToEdgeEnabled: true,
-            predictiveBackGestureEnabled: false
+            predictiveBackGestureEnabled: false,
+            package: "com.edgarrooca.app3"
         },
         web: {
             output: "static",
