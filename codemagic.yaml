@@ -11,7 +11,7 @@ workflows:
       - name: Install dependencies
         script: npm install
       - name: Prebuild Expo App
-        script: npx expo prebuild -p ios
+        script: EAS_CHANNEL=preview npx expo prebuild -p ios
       - name: Debug Expo.plist
         script: |
           PLIST_PATH=$(find ios -name Expo.plist | head -n 1)
