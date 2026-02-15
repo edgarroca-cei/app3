@@ -42,7 +42,7 @@ export default {
                 }
             ],
             [
-                "./plugins/withUpdateChannel",
+                "expo-updates",
                 {
                     channel: process.env.EAS_CHANNEL || "production"
                 }
